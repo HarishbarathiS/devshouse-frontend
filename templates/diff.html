@@ -1,0 +1,31 @@
+{% extends "basic2.html" %}
+
+{% block content %}
+<div class="table-container draggable container table table-hover play-bold">
+    {% for table_name, table_data in data.items() %}
+    <div class="table-wrapper draggable">
+        <h2>{{ table_name }}</h2>
+        <table>
+            <thead class="play-bold">
+                <tr>
+                    {% for header in table_data[0] %}
+                    {% if header != "__meta__" %}
+                    <th>{{ header }}</th>
+                    {% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody class="play-regular">
+                {% for row in table_data[1:] %}
+                <tr>
+                    {% for value in row %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

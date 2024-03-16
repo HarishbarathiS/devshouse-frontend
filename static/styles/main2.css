@@ -1,0 +1,90 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+body {
+  transition: transform 0.3s ease;
+  transform-origin: 0 0;
+}
+.table-container {
+  display: flexbox;
+  flex-wrap: wrap;
+  transform: translate(0px, 0px);
+  touch-action: none;
+  user-select: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.table-wrapper {
+  display: inline-flex;
+  /* Use inline-flex */
+  flex-direction: column;
+  /* Added margin between tables */
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  /* Center-align content */
+  padding: 10px;
+  margin-top: 130px;
+  min-width: 300px;
+  max-width: 100%;
+  background-color: #20222500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*#20222500*/
+
+.table-wrapper h2 {
+  margin: 0;
+  /* Remove default margin */
+}
+
+.play-regular {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ccc;
+}
+
+.play-bold {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ccc;
+}
+
+table {
+  width: calc(100% - 10px);
+  /* Adjust the width of the table */
+  border-collapse: collapse;
+  /* Collapse borders */
+  padding: 5px;
+  /* Add padding to the table */
+  border-radius: 3px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #908e8e;
+  color: #fff;
+}
+
+tr:hover {
+  background-color: #444;
+}

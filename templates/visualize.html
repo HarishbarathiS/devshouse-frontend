@@ -1,0 +1,33 @@
+{% extends "basic1.html" %}
+
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
+
+{% block content %}
+<div class="table-container draggable container table table-hover play-bold">
+    {% for table_name, table_data in data.items() %}
+    <div class="table-wrapper draggable">
+        <h2>{{ table_name }}</h2>
+        <table>
+            <thead class="play-bold">
+                <tr>
+                    {% for header in table_data[1] %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody class="play-regular">
+                {% for row in table_data[2:] %}
+                <tr>
+                    {% for value in row %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
